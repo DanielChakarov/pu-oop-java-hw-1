@@ -1,3 +1,4 @@
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -16,7 +17,9 @@ public class GameBoard extends JFrame implements MouseListener {
     char [] phoneNumber         = new char [10];
     String serialNumberSymbols  = "wk48u3hh1k";
 
-
+    /**
+     * Method visualising pixels in the game board
+     */
     public void gameBoard(){
         this.pixels = new Object[64][64];
         Color color       = null;
@@ -54,7 +57,9 @@ public class GameBoard extends JFrame implements MouseListener {
         this.addMouseListener(this);
     }
 
-
+    /**
+     * Method which paint paint the pixels in the game board
+     */
     @Override
     public void paint(Graphics g) {
         super.paint(g);
@@ -70,12 +75,17 @@ public class GameBoard extends JFrame implements MouseListener {
         return this.pixels[row][col];
     }
 
+    /**
+     * This method takes the coordinates of pixels
+     */
     private int coordinates(int pixCoordinates){
         return pixCoordinates / Pixel.pixSize;
     }
 
 
-
+    /**
+     * Method which decide if pixel is broken or not
+     */
     @Override
     public void mouseClicked(MouseEvent e) {
         System.out.println(this.coordinates((e.getX())));
@@ -110,7 +120,9 @@ public class GameBoard extends JFrame implements MouseListener {
         }
     }
 
-
+    /**
+     * Method generated serial number for phones
+     */
     public String serialNumberSetter(){
         int randomNum;
         for (int counter = 0; counter <= 10; counter++){
@@ -119,25 +131,4 @@ public class GameBoard extends JFrame implements MouseListener {
         }
         return new String(this.phoneNumber);
     }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
-    }
 }
-
