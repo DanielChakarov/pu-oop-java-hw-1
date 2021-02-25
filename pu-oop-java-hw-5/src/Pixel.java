@@ -1,5 +1,8 @@
 import java.awt.*;
 
+/**
+ * Class setting attributes for all pixels
+ */
 public class Pixel {
 
     private int row;
